@@ -1,11 +1,11 @@
 <launch>
-  <arg name="camera_optical_link_frame" description="E.g., camera0/camera_optical_link"/>
-  <arg name="lidar_frame" description="E.g., velodyne_top. this is used for the extrinsic_calibration_manager under the hood"/>
-  <arg name="image_decompressed_topic" default="/sensing/camera/camera0/image_rect_color/decompressed" description="Internal topic to decompress the image"/>
-  <arg name="image_compressed_topic" default="/sensing/camera/camera0/image_rect_color/compressed" description="Input compressed image"/>
+  <arg name="camera_optical_link_frame" default="camera0/camera_optical_link" description="E.g., camera0/camera_optical_link"/>
+  <arg name="lidar_frame" default="ouster_top" description="E.g., velodyne_top. this is used for the extrinsic_calibration_manager under the hood"/>
+  <arg name="image_decompressed_topic" default="/sensing/camera/camera0/image_raw" description="Internal topic to decompress the image"/>
+  <arg name="image_compressed_topic" default="/sensing/camera/camera0/compressed" description="Input compressed image"/>
   <arg name="camera_info_topic" default="/sensing/camera/camera0/camera_info"/>
-  <arg name="pointcloud_topic" default="/sensing/lidar/top/pointcloud_raw"/>
-  <arg name="use_rectified_image" default="true" description="image_rect vs. raw"/>
+  <arg name="pointcloud_topic" default="/sensing/lidar/top/pointcloud"/>
+  <arg name="use_rectified_image" default="false" description="image_rect vs. raw"/>
   <arg name="view_only_ui" default="true" description="By default we use a minimal UI"/>
 
   <arg name="lidar_model">
